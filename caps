@@ -1,0 +1,10 @@
+#!/bin/bash 
+if [ $1 == "on" ]
+  then  setxkbmap -option
+  elif [ $1 == "off" ]
+  then  setxkbmap -option -option caps:escape 
+  elif [ $1 == "switch" ] || [ $1 == "swap" ]
+  then  setxkbmap -option caps:swapescape
+ else echo "inatakiwa uweke argument ama on or off"
+fi;
+
