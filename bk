@@ -5,8 +5,7 @@ bk_to="";
   dirs=$(pwd);
     IFS='/' read -ra data <<<"$dirs";
     for ((i=${#data[@]}-1;i>=0;i--)); do
-      if [[ "${data[i]}" == *$1* ]]; then
-          cd $bk_to;
+      if [[ "${data[i]}" == *$1* ]]; then cd $bk_to;
         else bk_to="../$bk_to";
       fi
     done
@@ -22,8 +21,7 @@ bk_to="";
 
 
 n=$1;
-if [ -z $n ]
-  then echo "not specified how many levels up to back";
+if [ -z $n ] then echo "not specified how many levels up to back";
 fi
 
 if [[ $n =~ ^[0-9]{0,10}$ ]]; then bk_number $n;
